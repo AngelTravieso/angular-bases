@@ -1,13 +1,32 @@
 import { Component } from '@angular/core';
 
-// @Component() es un decorador que transforma mi clase en un componente
+// snippet: a-component
+
 @Component({
-  selector: 'app-counter', // => nombre de la etiqueta
-  template: '<h1>Hola Counter</h1>', // => template en línea del HTML
+  selector: 'app-counter',
+  template: `
+      <h3>Counter: {{ counter }}</h3>
 
+      <button (click)="increseBy(+1)">+1</button>
+      <button (click)="resetCounter()">+Reset</button>
+      <button (click)="increseBy(-1)">-1</button>
+
+  `
 })
-export class CounterComponent {
 
+export class CounterComponent {
+  constructor() { }
+
+  public counter: number = 10;
+
+
+  increseBy( value: number = 1 ): void {
+    this.counter += value;
+  }
+
+  resetCounter() : void {
+    this.counter = 10;
+  }
 
 
 }
