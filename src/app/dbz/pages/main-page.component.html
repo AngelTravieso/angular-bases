@@ -10,7 +10,8 @@
   </div>
 
   <div class="col">
-    <dbz-add-character></dbz-add-character>
+    <!-- $event => parámetro especial de angular que recibe el evento que se propaga -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></dbz-add-character>
   </div>
 
 </div>

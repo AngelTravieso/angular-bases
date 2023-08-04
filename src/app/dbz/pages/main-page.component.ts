@@ -15,4 +15,11 @@ export class MainPageComponent {
     {name: 'Vegeta', power: 7500},
   ];
 
+  // Character => evento que se recibe del formulario, propagado
+  onNewCharacter( character: Character ): void {
+    console.log('Main Page');
+    console.log(character);
+
+  }
+
 }
