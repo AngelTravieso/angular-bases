@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { MainPageComponent } from './pages/main-page.component';
+import { AddCharacterComponent } from './components/add-character/add-character.component';
 import { ListComponent } from './components/list/list.component';
-import { CharacterComponent } from './components/add-character/character.component';
 
 
 
 @NgModule({
   declarations: [
     MainPageComponent,
+    AddCharacterComponent,
     ListComponent,
-    CharacterComponent,
   ],
   exports: [
     MainPageComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule, // => necesario cuando se usa [()] en un html
   ],
 })
 export class DbzModule { }
