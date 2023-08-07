@@ -1,5 +1,5 @@
 // a-component
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Character } from '../interfaces/character.interface';
 
 @Component({
@@ -17,8 +17,11 @@ export class MainPageComponent {
 
   // Character => evento que se recibe del formulario, propagado
   onNewCharacter( character: Character ): void {
-    console.log('Main Page');
-    console.log(character);
+    // console.log('Main Page');
+    // console.log(character);
+
+    // Añadir nuevo personaje al final del arreglo
+    this.characters.push( character );
 
   }
 

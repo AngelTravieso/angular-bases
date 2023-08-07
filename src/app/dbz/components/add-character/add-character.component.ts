@@ -35,8 +35,7 @@ export class AddCharacterComponent {
 
 
     // Reiniciar inputs del formulario
-    this.character.name = '';
-    this.character.power = 0;
+    this.character = { name: '', power: 0 };
   }
 
 }
