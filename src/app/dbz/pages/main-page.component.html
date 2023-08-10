@@ -7,8 +7,8 @@
       Aquí estoy enviando al componente hijo mi arreglo de `characters` definido en mi main-page.components.ts
      -->
     <dbz-list
-      [characterList]="characters"
-      (onDelete)="onDeletedCharacter($event)"
+      [characterList]="dbzService.characters"
+      (onDelete)="dbzService.onDeletedCharacter($event)"
       >
     </dbz-list>
   </div>
@@ -16,7 +16,7 @@
   <div class="col">
     <!-- $event => parámetro especial de angular que recibe el evento que se propaga -->
     <dbz-add-character
-      (onNewCharacter)="onNewCharacter($event)">
+      (onNewCharacter)="dbzService.onNewCharacter($event)">
     </dbz-add-character>
   </div>
 
