@@ -25,4 +25,10 @@ export class MainPageComponent {
 
   }
 
+
+  onDeletedCharacter( index: number ): void {
+    this.characters.splice( index, 1 );
+  }
+
+
 }
