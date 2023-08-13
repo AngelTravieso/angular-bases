@@ -28,7 +28,7 @@ export class DbzService {
   ];
 
   // Character => evento que se recibe del formulario, propagado
-  onNewCharacter( character: Character ): void {
+  addCharacter( character: Character ): void {
     // console.log('Main Page');
     // console.log(character);
 
