@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { v4 as uuid } from 'uuid';
+
 import { Character } from '../interfaces/character.interface';
 
 // a-service
@@ -8,9 +10,21 @@ import { Character } from '../interfaces/character.interface';
 export class DbzService {
 
   public characters: Character[] = [
-    {name: 'Krilin', power: 1000},
-    {name: 'Goku', power: 9500},
-    {name: 'Vegeta', power: 7500},
+    {
+      id: uuid(),
+      name: 'Krilin',
+      power: 1000
+    },
+    {
+      id: uuid(),
+      name: 'Goku',
+      power: 9500
+    },
+    {
+      id: uuid(),
+      name: 'Vegeta',
+      power: 7500
+    },
   ];
 
   // Character => evento que se recibe del formulario, propagado
@@ -18,14 +32,23 @@ export class DbzService {
     // console.log('Main Page');
     // console.log(character);
 
+    const newCharacter: Character = {
+      ...character, // => toma todas sus propiedades y esparcelas en el nuevo objeto que se crea
+      id: uuid(),
+    };
+
     // Añadir nuevo personaje al final del arreglo
-    this.characters.push( character );
+    this.characters.push( newCharacter );
 
   }
 
 
-  onDeletedCharacter( index: number ): void {
-    this.characters.splice( index, 1 );
+  // onDeletedCharacter( index: number ): void {
+  //   this.characters.splice( index, 1 );
+  // }
+
+  deleteCharacterById( id: string ): void {
+    this.characters = this.characters.filter( character => character.id !== id );
   }
 
 }
